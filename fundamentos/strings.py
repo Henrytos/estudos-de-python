@@ -26,3 +26,16 @@ print(full_name[1::2])
 # inverter
 print(full_name[::-1])
 
+
+
+# metodos 
+
+print(full_name.upper())
+print(full_name.lower())
+print(full_name.title())
+print(full_name.capitalize())
+print(full_name.find('h'))
+print(full_name.count('n'))
+print(full_name.replace("arcaya","miranda"))
+print(first_name.center(1,"-"))
+print(full_name.split(' '))
