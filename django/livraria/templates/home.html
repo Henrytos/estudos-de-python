@@ -1,0 +1,20 @@
+{% extends 'layout.html' %} {% block content %} {% if user.is_authenticated%}
+<h2 class="text-center">Usuario logado</h2>
+<hr />
+
+{%else %}
+<h2 class="text-center">login</h2>
+<hr />
+<form method="POST" action="{% url 'home' %}">
+  {% csrf_token %}
+  <div>
+    <label for="usuario" class="form-label">Usuario:</label>
+    <input type="text" name="usuario" class="form-control" required />
+  </div>
+  <div class="mb-2">
+    <label for="nome" class="form-label">senha:</label>
+    <input type="password" name="senha" class="form-control" required />
+  </div>
+  <button type="submit" class="btn btn-primary">Entrar</button>
+</form>
+{% endif %} {% endblock %}
