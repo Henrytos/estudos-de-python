@@ -22,6 +22,8 @@ print(gamesTuple[2:])
 # Recupera um item da tupla pelo índice
 print(gamesTuple.index("Fifa23"))
 
+print(type(gamesTuple))
+
 # Não possibilita adicionar valores na tupla
 # Não possibilita remover valores na tupla
 # Não possibilita ordenar valores na tupla
