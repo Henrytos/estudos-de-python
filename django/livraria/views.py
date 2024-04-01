@@ -63,3 +63,12 @@ def book_detail(request , id):
     else:
         messages.error(request,"voce não está autenticado para ver o livros")
         return redirect("home")
+def book_delete(request , id):
+    if request.user.is_authenticated:
+        book = Book.objects.get(id=id)
+        book.delete()
+        messages.success(request,"Livro deletado com sucesso")
+        return redirect('home')
+    else:
+        messages.error(request,"erro ao deletar voce precia estar autenticado")
+        return redirect('home')
