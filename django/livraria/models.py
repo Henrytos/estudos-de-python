@@ -9,4 +9,4 @@ class Book(models.Model):
     value = models.FloatField()
 
     def __str__(self) :
-        return (f'{self.title}-{self.value}')
+        return (f'{self.title} - R${self.value}')

@@ -1,7 +1,12 @@
-{% extends 'layout.html' %} {% block content %} {% if user.is_authenticated%}
+{% extends 'layout.html' %} {% block content %} 
+{% if user.is_authenticated%}
 <h2 class="text-center">Usuario logado</h2>
 <hr />
-
+{%if books %}
+  {% for book in books %}
+    <p>{{book}}</div>
+  {% endfor %}
+{% endif %}
 {%else %}
 <h2 class="text-center">login</h2>
 <hr />
