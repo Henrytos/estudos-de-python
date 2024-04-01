@@ -55,3 +55,11 @@ def register_user(request):
         form = SignUpForm()
         return render(request, 'register.html', {'form': form})
     return render(request, 'register.html', {'form': form})
+
+def book_detail(request , id):
+    if request.user.is_authenticated:
+        book = Book.objects.get(id=id)
+        return render(request,'book.html',{'book':book})
+    else:
+        messages.error(request,"voce não está autenticado para ver o livros")
+        return redirect("home")

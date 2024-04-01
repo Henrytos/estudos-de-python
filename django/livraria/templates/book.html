@@ -1,0 +1,14 @@
+{% extends 'layout.html' %} {% block content %}
+<h2 class="text-center">livro {{book.title}}</h2>
+<hr />
+<div>
+  <div class="card col-6 m-auto">
+    <div class="card-body">
+      <h5 class="card-title">{{book.gern}} - {{book.year}}</h5>
+      <h5 class="card-title">R$ {{book.value}}</h5>
+      <p class="card-text">{{book.description}}</p>
+    </div>
+  </div>
+  <a href="{% url 'home'%}" class="btn btn-dark"> voltar</a>
+</div>
+{% endblock %}

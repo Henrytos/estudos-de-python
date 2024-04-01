@@ -1,13 +1,31 @@
-{% extends 'layout.html' %} {% block content %} 
-{% if user.is_authenticated%}
+{% extends 'layout.html' %} {% block content %} {% if user.is_authenticated%}
 <h2 class="text-center">Usuario logado</h2>
 <hr />
 {%if books %}
-  {% for book in books %}
-    <p>{{book}}</div>
-  {% endfor %}
-{% endif %}
-{%else %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>title</th>
+      <th>gern</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}
+    <tr>
+      <td>
+        <a href="{% url 'book' book.id %}"> {{book.id}} </a>
+      </td>
+      <td>{{book.title}}</td>
+      <td>{{book.gern}}</td>
+      <td>R$ {{book.value}}</td>
+    </tr>
+
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %} {%else %}
 <h2 class="text-center">login</h2>
 <hr />
 <form method="POST" action="{% url 'home' %}">
