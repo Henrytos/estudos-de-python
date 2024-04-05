@@ -8,3 +8,5 @@ print(calc.multi(10, 20))
 
 
 print(div(10,2))
+
+help('modules')
