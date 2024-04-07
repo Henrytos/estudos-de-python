@@ -72,3 +72,24 @@ anos = dataframe_times['Anos'].explode()
 ano_com_mais_titulo= anos.mode()[0]
 print(anos)
 print(f"ano_com_mais_titul { ano_com_mais_titulo}")
+
+usuarios = {
+    "nome":["henry","nathalia"],
+    "salario":[1000,200],
+    "idade":[17,17],
+    "signo":["libras","libras"]
+}
+
+# new_table = pd.DataFrame(usuarios)
+# new_table.to_excel('pessoas.xlsx',index=False)
+
+
+#2-maior salario
+ganha_mais = table_persons[table_persons['salario'] == table_persons['salario'].max()]
+ganha_menos = table_persons[table_persons['salario'] == table_persons['salario'].min()]
+print(ganha_mais)
+print(ganha_menos)
+
+#3-Distribuição de salários
+print(table_persons['salario'].value_counts())
+
